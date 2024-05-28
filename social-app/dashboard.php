@@ -172,6 +172,16 @@ $private_posts_result = mysqli_query($conn, $private_posts_query);
             color: #666;
             margin-bottom: 5px;
         }
+        .view_public_posts{
+            align-content: right;
+            position: absolute;
+            margin: 10px 0px 0px 250px;
+        }
+        .view_public_posts:hover{
+            background-color: gray;
+            color: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -237,10 +247,13 @@ $private_posts_result = mysqli_query($conn, $private_posts_query);
             ?>
             <!-- Divider for Public Contents -->
             <div class="main_divider"><hr></div>
+           <!-- Inside the existing HTML code -->
             <div class="divider">
-                <div class="circle">Public Contents</div> 
+                <div class="circle">Public Contents</div>
+                <button onclick="location.href='my_public_posts.php'" class="view_public_posts">My Public Posts</button>
                 <hr>
             </div>
+
             <br><br>
 
             <?php
