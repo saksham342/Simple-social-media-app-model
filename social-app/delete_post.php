@@ -22,12 +22,15 @@ if(isset($_POST['post_id'])) {
     // Execute DELETE query
     mysqli_query($conn, $delete_query);
 
-    // Redirect back to dashboard.php
-    header("location: dashboard.php");
+    // Check for referring page URL
+    $referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'dashboard.php';
+
+    // Redirect back to the referring page
+    header("Location: $referrer");
     exit(); // Exit script after redirection
 } else {
     // If post_id is not set in POST data, redirect to dashboard.php
-    header("location: dashboard.php");
+    header("Location: dashboard.php");
     exit(); // Exit script after redirection
 }
 ?>
